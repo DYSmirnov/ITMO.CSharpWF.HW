@@ -8,18 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ITMO.CSharpWF.HW.Lab3.Ex1
+namespace ITMO.CSharpWF.HW.Lab3.Ex2
 {
-    public partial class WinTimer1 : Form
+    public partial class CustomControl1 : Control
     {
-        public WinTimer1()
+        public CustomControl1()
         {
             InitializeComponent();
         }
 
-        private void buttonS_Click(object sender, EventArgs e)
+        protected override void OnPaint(PaintEventArgs pe)
         {
-            userControlTimer1.TimeEnabled = !userControlTimer1.TimeEnabled;
+            base.OnPaint(pe);
         }
     }
 }

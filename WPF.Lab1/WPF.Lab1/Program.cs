@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ITMO.CSharpWF.HW.Lab3.Ex1
+namespace WPF.Lab1
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace ITMO.CSharpWF.HW.Lab3.Ex1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new WinTimer1());
+            Application.Run(new Form1());
         }
     }
 }
