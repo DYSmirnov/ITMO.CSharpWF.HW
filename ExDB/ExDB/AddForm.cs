@@ -20,16 +20,22 @@ namespace ExDB
 
         private void button2Add_Click(object sender, EventArgs e)
         {
-            using (SqlConnection cn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=AdventureWorks2017;Data Source=."))
+            using (SqlConnection cn = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CSharpDB;Data Source=."))
             {
                 cn.Open();
 
 
                 using (SqlCommand cmd = new SqlCommand
-                     ("INSERT INTO [Person].[Person] " +
-                     "([BusinessEntityID],[PersonType],[NameStyle],[FirstName],[LastName],[EmailPromotion] ,[rowguid],[ModifiedDate])" +
-                     " VALUES ((select max([BusinessEntityID]) from [Person].[Person])+1," +
-                     $"'EM', 0, '{textBoxFName.Text}', '{textBoxLName.Text}', 0, NEWID(), GETDATE())", cn))
+                     ("INSERT INTO [dbo].[Contact] " +
+                     "(ID, [First Name],[Last Name])" +
+                     " VALUES ((select max([ID]) from [dbo].[Contact])+1," +
+                     $"'{textBoxFName.Text}', '{textBoxLName.Text}')", cn))
+                    cmd.ExecuteNonQuery();
+                using (SqlCommand cmd = new SqlCommand
+                 ("INSERT INTO [dbo].[Phone] " +
+                    "([ID], [Phone])" +
+                    " VALUES ((select max([ID]) from [dbo].[Contact])+1," +
+                 $"'{textBoxPhone.Text}')", cn))
                     cmd.ExecuteNonQuery();
 
             }
