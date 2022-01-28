@@ -1,17 +1,18 @@
-﻿<Window TextBoxBase.TextChanged="Window_TextChanged_1" 
-        x:Class="WPF.Lab2.Ex1.WpfRoutedEvent_2_1.MainWindow"
+﻿<Window TextBoxBase.TextChanged="Window_TextChanged" x:Class="ITMO.CSCourse.WPF.Practice02_Ex01.WpfRoutedEvent_2_1.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WPF.Lab2.Ex1.WpfRoutedEvent_2_1"
+        xmlns:local="clr-namespace:ITMO.CSCourse.WPF.Practice02_Ex01.WpfRoutedEvent_2_1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid TextBoxBase.SelectionChanged="Grid_TextChanged_1">
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="96,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="textBox1_TextChanged_1"/>
-        <RadioButton x:Name="radBut1" Content="Обработка события в Textbox" HorizontalAlignment="Left" Margin="96,50,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="radBut2" Content="Обработка события в Grid" HorizontalAlignment="Left" Margin="96,86,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="radBut3" Content="Обработка события в Window" HorizontalAlignment="Left" Margin="96,124,0,0" VerticalAlignment="Top"/>
-        
+        Title="MainWindow" Height="328.5" Width="456.5">
+    <Grid TextBoxBase.TextChanged="Grid_TextChanged">
+
+
+        <TextBox TextBoxBase.TextChanged="TextBoxBase_TextChanged_1"  x:Name="TextBoxBase" HorizontalAlignment="Left" Height="22" Margin="116,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <RadioButton x:Name="radBut1" Content="Обработка события TextBox" HorizontalAlignment="Left" Margin="92,35,0,0" VerticalAlignment="Top" Height="12" Width="250"/>
+        <RadioButton x:Name="radBut2" Content="Обработка события Grid" HorizontalAlignment="Left" Margin="92,96,0,0" VerticalAlignment="Top" Height="16" Width="186"/>
+        <RadioButton x:Name="radBut3" Content="Обработка события Window" HorizontalAlignment="Left" Margin="92,154,0,0" VerticalAlignment="Top" Height="16" Width="186"/>
+
     </Grid>
 </Window>
